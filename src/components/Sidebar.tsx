@@ -20,7 +20,7 @@ import SidebarProps from "../types/sideBar";
 import useScreenSize from "../helpers/useScreenSize";
 
 const showVariants = {
-  true: "w-[20vw] absolute h-full dark:bg-gray-800 bg-gray-200 z-10 flex flex-col justify-between items-center transition duration-500 py-4 gap-6 border-r-[#E5EAEF] dark:border-r-gray-400",
+  true: "block w-[20%] dark:bg-gray-800 bg-gray-200 z-10 absolute",
   false: "hidden",
 };
 
@@ -37,8 +37,12 @@ export default function Sidebar({ show, setShow }: SidebarProps) {
   };
 
   return (
-    <div className={`${showVariants[show]}`}>
-      <div className="flex flex-col justify-between items-center gap-y-6">
+    <div
+      className={`${
+        width < 425 && showVariants[show]
+      } md:flex h-full flex-col justify-between items-center transition duration-500 py-4 md:flex h-full flex-col justify-between items-center gap-y-4 md:gap-y-6 md:border-r border-r-[#E5EAEF] dark:border-r-gray-400 fixed w-[5%]`}
+    >
+      <div className="flex flex-col justify-between items-center md:gap-y-6 gap-y-4">
         <img
           src={vector}
           alt=""
@@ -76,7 +80,7 @@ export default function Sidebar({ show, setShow }: SidebarProps) {
           className="hover:cursor-pointer hover:fill-[#34CAA5] hover:border-r8 fill-blue-500"
         />
 
-        <div className="transition duration-500 active:translate-y-1 flex flex-col justify-between items-center gap-y-6 py-1 mx-1 my-2 rounded-3xl bg-gray-300 dark:bg-gray-300">
+        <div className="transition duration-500 active:translate-y-1 flex flex-col justify-between items-center gap-y-4 md:gap-y-6 py-1 mx-1 my-2 rounded-3xl bg-gray-300 dark:bg-gray-300">
           <img
             src={brightness}
             alt=""
@@ -92,7 +96,7 @@ export default function Sidebar({ show, setShow }: SidebarProps) {
         </div>
       </div>
 
-      <div className="flex flex-col justify-between items-center gap-y-6">
+      <div className="flex flex-col justify-between items-center md:gap-y-6 gap-y-4">
         <img
           src={arrowRight}
           alt=""
