@@ -56,17 +56,17 @@ export default function List() {
               <TableCell component="th" scope="row">
                 <div className="flex justify-start items-center gap-2">
                   <img src={image} alt="" />
-                  <p className="dark:text-[#737373] text-[#3A3F51] font-medium">
+                  <p className="dark:text-[#a8a9aa] text-[#3A3F51] font-medium">
                     {name}
                   </p>
                 </div>
               </TableCell>
-              <TableCell align="left" sx={{ color: "#737373" }}>
+              <TableCell align="left" sx={{ color: "#a8a9aa" }}>
                 {date}
               </TableCell>
               <TableCell
                 align="left"
-                sx={{ fontWeight: "500", color: "#737373" }}
+                sx={{ fontWeight: "500", color: "#a8a9aa" }}
               >
                 ${amount}
               </TableCell>

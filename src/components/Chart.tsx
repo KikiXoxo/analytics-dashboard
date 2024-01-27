@@ -63,7 +63,6 @@ export const data = {
 };
 
 export default function Chart() {
-  // const updatedData = { ...data };
   return (
     <div className="w-full md:w-3/5 bg-inherit border rounded-xl md:p-4 dark:border-gray-600">
       <Bar options={options} data={data} />

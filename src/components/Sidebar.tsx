@@ -27,7 +27,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="hidden transition duration-500 py-4 md:flex flex-col justify-between items-center gap-y-4 md:gap-y-6 md:border-r border-r-[#E5EAEF] dark:border-r-gray-400 fixed w-[5%]">
+    <div className="hidden transition duration-500 py-4 md:flex h-full flex-col justify-between items-center gap-y-4 md:gap-y-6 md:border-r border-r-[#E5EAEF] dark:border-r-gray-400 fixed w-[5%]">
       <div className="flex flex-col justify-between items-center md:gap-y-6 gap-y-4">
         <img
           src={vector}
