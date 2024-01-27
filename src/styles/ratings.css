@@ -1,0 +1,51 @@
+.p0 {
+  animation: anim-0 2s ease-in-out;
+}
+
+.p1 {
+  animation: anim-1 2s ease-in-out;
+}
+
+.p2 {
+  animation: anim-1 2s ease-in-out;
+}
+
+.p3 {
+  animation: anim-3 2s ease-in-out;
+}
+
+@keyframes anim-0 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+
+@keyframes anim-1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes anim-2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+
+@keyframes anim-3 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 30%;
+  }
+}
