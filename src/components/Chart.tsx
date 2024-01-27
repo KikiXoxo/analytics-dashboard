@@ -69,7 +69,7 @@ export const data = {
 
 export default function Chart() {
   return (
-    <div className="md:h-full h-96 w-full relative md:w-3/5 bg-inherit border rounded-xl md:p-4 dark:border-gray-600">
+    <div className="md:h-full h-96 w-full relative md:w-3/5 bg-inherit border rounded-xl md:p-4 dark:border-gray-600 bg-white dark:bg-inherit">
       <Bar options={options} data={data} />
     </div>
   );

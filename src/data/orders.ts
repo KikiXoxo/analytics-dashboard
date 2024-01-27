@@ -1,5 +1,9 @@
 import Orders from "../types/orders";
-import { person1, person2, person3, person4, person5 } from "../assets";
+import person1 from "../assets/person1.png";
+import person2 from "../assets/person1.png";
+import person3 from "../assets/person1.png";
+import person4 from "../assets/person1.png";
+import person5 from "../assets/person1.png";
 
 export const orders: Orders[] = [
   {

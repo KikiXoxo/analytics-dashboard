@@ -3,7 +3,7 @@ import { profile, bell, calendar, vector } from "../assets";
 import ShowVariants from "../types/showVariants";
 
 interface HeaderProps {
-  show: string;
+  show: boolean;
   setShow: any;
 }
 

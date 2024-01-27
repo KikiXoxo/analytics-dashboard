@@ -12,7 +12,7 @@ export default function Card({
   currency,
 }: CardProps) {
   return (
-    <div className="transition duration-500 flex flex-col justify-between p-4 bg-inherit border rounded-xl md:w-[46%] w-full dark:border-gray-600">
+    <div className="transition duration-500 flex flex-col justify-between p-4 bg-inherit border rounded-xl md:w-[46%] w-full dark:border-gray-600 bg-white dark:bg-inherit">
       <div className="flex justify-between">
         <img src={image} alt="" />
         <img src={graph} alt="" />

@@ -12,19 +12,21 @@ import Paper from "@mui/material/Paper";
 
 import { download } from "../assets";
 import useScreenSize from "../helpers/useScreenSize";
+import useDark from "../hooks/useDark";
 
 export default function List() {
   const { width, height } = useScreenSize();
+  const [colorTheme, setTheme] = useDark();
 
   return (
     <TableContainer
       component={Paper}
       sx={{
-        backgroundColor: "inherit",
+        backgroundColor: () => (colorTheme === "light" ? "white" : "inherit"),
         borderRadius: "14px",
         width: () => (width < 425 ? "100%" : "60%"),
       }}
-      className="transition duration-500 h-max bg-inherit border border-bg-[#4b5563] dark:border-gray-600"
+      className="transition duration-500 h-max border border-bg-[#4b5563] dark:border-gray-600"
     >
       <Table sx={{ minWidth: 650 }} aria-label="table">
         <TableHead>

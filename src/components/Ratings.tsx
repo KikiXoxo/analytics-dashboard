@@ -11,7 +11,7 @@ export default function Ratings() {
   };
 
   return (
-    <div className="w-full md:w-2/5 p-4 border rounded-3xl bg-inherit dark:border-gray-600">
+    <div className="w-full md:w-2/5 p-4 border rounded-3xl bg-inherit dark:border-gray-600 bg-white dark:bg-inherit">
       <div className="flex justify-between items-center pb-4">
         <p className="font-semibold text-lg dark:text-gray-400">Top Platform</p>
         <p className="font-medium text-[#34CAA5]">See All</p>
