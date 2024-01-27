@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 import { orders } from "../data/orders";
+
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -7,19 +10,21 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-import download from "../assets/download.svg";
+import { download } from "../assets";
+import useScreenSize from "../helpers/useScreenSize";
 
 export default function List() {
-  const rows = orders;
+  const { width, height } = useScreenSize();
+
   return (
     <TableContainer
       component={Paper}
       sx={{
         backgroundColor: "inherit",
         borderRadius: "14px",
-        width: "60%",
+        width: () => (width < 425 ? "100%" : "60%"),
       }}
-      className="transition duration-500 md:w-3/5 h-max bg-inherit border border-bg-[#4b5563] dark:border-gray-600"
+      className="transition duration-500 h-max bg-inherit border border-bg-[#4b5563] dark:border-gray-600"
     >
       <Table sx={{ minWidth: 650 }} aria-label="table">
         <TableHead>
@@ -42,7 +47,7 @@ export default function List() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(({ key, image, name, date, amount, status }) => (
+          {orders.map(({ key, image, name, date, amount, status }) => (
             <TableRow
               key={key}
               className="dark:border-b dark:border-b-gray-300"
@@ -75,8 +80,8 @@ export default function List() {
               </TableCell>
               <TableCell align="left">
                 <div className="flex justify-start items-center gap-1">
-                  <img src={download} alt="" />
-                  <p className="font-normal text-sm not-italic text-[#0D062D] dark:text-[#737373]">
+                  <img src={download} alt="" className="fill-gray-300" />
+                  <p className="font-normal text-sm not-italic text-[#0D062D] dark:text-gray-300">
                     View
                   </p>
                 </div>

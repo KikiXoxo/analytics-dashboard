@@ -15,7 +15,7 @@ function App() {
       <div className="flex flex-col w-full">
         <Header />
 
-        <div className="flex flex-col justify-between items-stretch gap-1 px-6">
+        <div className="flex flex-col justify-between items-stretch gap-1 px-2 md:px-6">
           <Top />
           <Bottom />
         </div>

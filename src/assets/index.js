@@ -11,3 +11,4 @@ export { default as person2 } from "../assets/person2.png";
 export { default as person3 } from "../assets/person3.png";
 export { default as person4 } from "../assets/person4.png";
 export { default as person5 } from "../assets/person5.png";
+export { default as download } from "../assets/download.svg";

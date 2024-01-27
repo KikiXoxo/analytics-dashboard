@@ -2,7 +2,7 @@ import search from "../assets/search.svg";
 
 export default function Search() {
   return (
-    <div className="relative">
+    <div className="relative hidden md:block">
       <input
         type="text"
         placeholder="Search..."
