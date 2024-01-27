@@ -50,7 +50,6 @@ export default function List() {
           {orders.map(({ key, image, name, date, amount, status }) => (
             <TableRow
               key={key}
-              className="dark:border-b dark:border-b-gray-300"
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">

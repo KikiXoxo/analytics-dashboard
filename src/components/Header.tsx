@@ -1,13 +1,33 @@
 import Search from "./Search";
-import profile from "../assets/profile.png";
-import bell from "../assets/solar_bell-outline.svg";
-import calendar from "../assets/solar_calendar-linear.svg";
+import { profile, bell, calendar, vector } from "../assets";
+import ShowVariants from "../types/showVariants";
 
-export default function Header() {
+interface HeaderProps {
+  show: string;
+  setShow: any;
+}
+
+export default function Header({ show, setShow }: HeaderProps) {
+  const handleClick = () => {
+    setShow(!show);
+  };
+
+  const showVariants: ShowVariants = {
+    true: "hidden",
+    false: "block",
+  };
+
   return (
-    <div className="transition duration-500 flex w-full h-16 p-8 justify-between items-center border-b border-b-[#E5EAEF] dark:border-b-gray-600">
-      {/* <div className="flex "> */}
-      <h1 className="text-xl font-semibold dark:text-gray-300">Dashboard</h1>
+    <div className="transition duration-500 flex w-full h-16 p-4 md:p-8 justify-between items-center border-b border-b-[#E5EAEF] dark:border-b-gray-600">
+      <div className="flex justify-between items-center gap-2">
+        <img
+          src={vector}
+          alt=""
+          className={`${showVariants[show]} md:hidden size-8 animate-pulse`}
+          onClick={handleClick}
+        />
+        <h1 className="text-xl font-semibold dark:text-gray-300">Dashboard</h1>
+      </div>
       <div className="flex gap-4 justify-between items-center">
         <Search />
 

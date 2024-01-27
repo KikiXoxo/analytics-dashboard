@@ -1,25 +1,35 @@
 import { useState } from "react";
 
-import vector from "../assets/Vector.svg";
-import category from "../assets/category.svg";
-import trendUp from "../assets/trend-up.svg";
-import profile2user from "../assets/profile-2user.svg";
-import box from "../assets/box.svg";
-import discountShape from "../assets/discount-shape.svg";
-import infoCircle from "../assets/info-circle.svg";
-import brightness from "../assets/brightness.svg";
-import moon from "../assets/moon.svg";
-import arrowRight from "../assets/arrow-right.svg";
-import setting from "../assets/setting.svg";
-import logout from "../assets/logout.svg";
+import {
+  vector,
+  category,
+  trendUp,
+  profile2user,
+  box,
+  discountShape,
+  infoCircle,
+  brightness,
+  moon,
+  arrowRight,
+  setting,
+  logout,
+} from "../assets";
 
 import useDark from "../hooks/useDark";
+import SidebarProps from "../types/sideBar";
+import useScreenSize from "../helpers/useScreenSize";
 
-export default function Sidebar() {
+const showVariants = {
+  true: "block w-[20vw] dark:bg-gray-800 bg-gray-200 z-10",
+  false: "hidden",
+};
+
+export default function Sidebar({ show, setShow }: SidebarProps) {
   const [colorTheme, setTheme] = useDark();
-  const [darkMode, setDarkMode] = useState(
+  const [darkMode, setDarkMode] = useState<boolean>(
     colorTheme === "light" ? true : false
   );
+  const { width, height } = useScreenSize();
 
   const handleClick = () => {
     setTheme(colorTheme);
@@ -27,12 +37,15 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="hidden transition duration-500 py-4 md:flex h-full flex-col justify-between items-center gap-y-4 md:gap-y-6 md:border-r border-r-[#E5EAEF] dark:border-r-gray-400 fixed w-[5%]">
+    <div
+      className={`${showVariants[show]} md:flex h-full flex-col justify-between items-center transition duration-500 py-4 md:flex h-full flex-col justify-between items-center gap-y-4 md:gap-y-6 md:border-r border-r-[#E5EAEF] dark:border-r-gray-400 fixed w-[5%]`}
+    >
       <div className="flex flex-col justify-between items-center md:gap-y-6 gap-y-4">
         <img
           src={vector}
           alt=""
           className="hover:cursor-pointer hover:fill-[#34CAA5] hover:border-r8"
+          onClick={() => (width < 425 ? setShow(!show) : null)}
         />
         <img
           src={category}
@@ -65,7 +78,7 @@ export default function Sidebar() {
           className="hover:cursor-pointer hover:fill-[#34CAA5] hover:border-r8 fill-blue-500"
         />
 
-        <div className="transition duration-500 active:translate-y-1 flex flex-col justify-between items-center gap-y-4 md:gap-y-6 py-1 mx-1 rounded-3xl bg-gray-300 dark:bg-gray-300">
+        <div className="transition duration-500 active:translate-y-1 flex flex-col justify-between items-center gap-y-4 md:gap-y-6 py-1 mx-1 my-2 rounded-3xl bg-gray-300 dark:bg-gray-300">
           <img
             src={brightness}
             alt=""
