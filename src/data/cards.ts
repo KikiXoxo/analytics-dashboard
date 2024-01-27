@@ -7,7 +7,7 @@ import {
   graph2,
   graph3,
   graph4,
-} from "../assets/";
+} from "../assets";
 
 import Card from "../types/card";
 

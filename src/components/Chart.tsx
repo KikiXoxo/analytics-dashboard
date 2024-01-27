@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +8,6 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import useDark from "../hooks/useDark";
 import randomNum from "../helpers/randomNum";
 
 ChartJS.register(
