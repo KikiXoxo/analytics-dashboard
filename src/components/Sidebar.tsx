@@ -21,7 +21,7 @@ import useScreenSize from "../helpers/useScreenSize";
 import ShowVariants from "../types/showVariants";
 
 const showVariants: ShowVariants = {
-  true: "flex w-[20%] dark:bg-gray-800 bg-gray-200 z-10 absolute gap-y-6",
+  true: "flex w-[20vw] dark:bg-gray-800 bg-gray-200 z-10 absolute gap-y-6",
   false: "hidden",
 };
 
