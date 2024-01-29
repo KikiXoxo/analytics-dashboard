@@ -1,4 +1,4 @@
 export default interface SidebarProps {
-  show: boolean;
-  setShow: any;
+  show: string;
+  setShow: React.Dispatch<React.SetStateAction<string>>;
 }

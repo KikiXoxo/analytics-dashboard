@@ -6,7 +6,7 @@ import Bottom from "./components/Bottom";
 import Sidebar from "./components/Sidebar";
 
 function App() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState("false");
 
   return (
     <div className="transition duration-500 bg-neutral-50 dark:bg-gray-700 flex flex-row justify-between">

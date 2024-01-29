@@ -3,13 +3,13 @@ import { profile, bell, calendar, vector } from "../assets";
 import ShowVariants from "../types/showVariants";
 
 interface HeaderProps {
-  show: boolean;
+  show: string;
   setShow: any;
 }
 
 export default function Header({ show, setShow }: HeaderProps) {
   const handleClick = () => {
-    setShow(!show);
+    setShow(show === "true" ? "false" : "true");
   };
 
   const showVariants: ShowVariants = {

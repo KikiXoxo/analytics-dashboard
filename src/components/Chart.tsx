@@ -6,6 +6,8 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartData,
+  ChartOptions,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import randomNum from "../helpers/randomNum";
@@ -21,17 +23,16 @@ ChartJS.register(
 
 ChartJS.defaults.font.size = 10;
 
-const options = {
+const options: ChartOptions<"bar"> = {
   maintainAspectRatio: false,
   layout: {
     padding: 4,
-    color: "#9ca3af",
   },
   plugins: {
     title: {
       display: true,
       text: "Sales Trends",
-      font: { weight: "600", size: "18px" },
+      font: { weight: "bold", size: 18 },
       align: "start",
     },
     legend: {
@@ -55,14 +56,14 @@ const labels = [
   "Dec",
 ];
 
-export const data = {
+const data: ChartData<"bar"> = {
   labels,
   datasets: [
     {
       label: "Dataset",
       data: labels.map(() => randomNum(0, 50000)),
       backgroundColor: "rgb(52, 202, 165)",
-      borderRadius: { topLeft: "10px", topRight: "10px" },
+      borderRadius: 20,
     },
   ],
 };

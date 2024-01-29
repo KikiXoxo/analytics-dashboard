@@ -18,8 +18,9 @@ import {
 import useDark from "../hooks/useDark";
 import SidebarProps from "../types/sideBar";
 import useScreenSize from "../helpers/useScreenSize";
+import ShowVariants from "../types/showVariants";
 
-const showVariants = {
+const showVariants: ShowVariants = {
   true: "flex w-[20%] dark:bg-gray-800 bg-gray-200 z-10 absolute gap-y-6",
   false: "hidden",
 };
@@ -29,7 +30,7 @@ export default function Sidebar({ show, setShow }: SidebarProps) {
   const [darkMode, setDarkMode] = useState<boolean>(
     colorTheme === "light" ? true : false
   );
-  const { width, height } = useScreenSize();
+  const { width } = useScreenSize();
 
   const handleClick = () => {
     setTheme(colorTheme);
@@ -47,7 +48,9 @@ export default function Sidebar({ show, setShow }: SidebarProps) {
           src={vector}
           alt=""
           className="hover:cursor-pointer hover:fill-[#34CAA5] hover:border-r8"
-          onClick={() => (width < 425 ? setShow(!show) : null)}
+          onClick={() =>
+            width < 425 ? setShow(show === "true" ? "false" : "true") : null
+          }
         />
         <img
           src={category}

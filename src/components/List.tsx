@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { orders } from "../data/orders";
 
 import Table from "@mui/material/Table";
@@ -15,8 +13,8 @@ import useScreenSize from "../helpers/useScreenSize";
 import useDark from "../hooks/useDark";
 
 export default function List() {
-  const { width, height } = useScreenSize();
-  const [colorTheme, setTheme] = useDark();
+  const { width } = useScreenSize();
+  const [colorTheme] = useDark();
 
   return (
     <TableContainer
