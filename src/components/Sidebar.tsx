@@ -21,7 +21,7 @@ import useScreenSize from "../helpers/useScreenSize";
 import ShowVariants from "../types/showVariants";
 
 const showVariants: ShowVariants = {
-  true: "flex w-[20vw] dark:bg-gray-800 bg-gray-200 z-10 absolute gap-y-6",
+  true: "flex w-[20%] px-4 dark:bg-gray-800 bg-gray-200 z-10 gap-y-6 fixed",
   false: "hidden",
 };
 
@@ -41,7 +41,7 @@ export default function Sidebar({ show, setShow }: SidebarProps) {
     <div
       className={`${
         width < 425 && showVariants[show]
-      } md:flex h-full flex-col justify-between items-center transition duration-500 py-4 md:flex h-full flex-col justify-between items-center gap-y-8 md:border-r border-r-[#E5EAEF] dark:border-r-gray-400 fixed w-[5%]`}
+      } fixed md:flex h-full flex-col justify-between items-center transition duration-500 py-4 md:flex h-full flex-col justify-between items-center gap-y-8 md:border-r border-r-[#E5EAEF] dark:border-r-gray-400`}
     >
       <div className="flex flex-col justify-between items-center gap-y-6">
         <img
@@ -83,7 +83,7 @@ export default function Sidebar({ show, setShow }: SidebarProps) {
           className="hover:cursor-pointer hover:fill-[#34CAA5] hover:border-r8 fill-blue-500"
         />
 
-        <div className="transition duration-500 active:translate-y-1 flex flex-col justify-between items-center gap-y-6 py-1 mx-1 my-2 rounded-3xl bg-gray-300 dark:bg-gray-300">
+        <div className="transition duration-500 active:translate-y-1 flex flex-col justify-between items-center gap-y-6 py-1 md:px-0 px-1 mx-1 my-2 rounded-3xl bg-gray-300 dark:bg-gray-300">
           <img
             src={brightness}
             alt=""
